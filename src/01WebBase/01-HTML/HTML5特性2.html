@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5特性2</title>
+</head>
+
+<body>
+
+
+<label>Date:<input type="text"/></label>
+<hr>
+
+<label for="mobile">Number:</label>
+<input type="text" id="mobile"/>
+<hr>
+<iframe src="frameHTML.html" name="frame" class="frame">
+    <script>
+        window.localStorage.setItem('myCat', 'Tom');
+        console.log(localStorage.getItem('myCat'))
+    </script>
+</iframe>
+
+<script>
+
+    window.onload = function () {
+        setTimeout(() => {
+            window.top.postMessage('handsome', '*')
+        }, 0)
+    }
+
+
+    //通过 window.frames['frame'];获取子frame
+    let frame = window.frames['frame'];
+
+
+    console.log(frame.localStorage.getItem('myCat'))
+    console.log(frame.name)
+</script>
+
+<style>
+    .frame {
+        width: 300px;
+        height: 400px;
+    }
+</style>
+</body>
+</html>

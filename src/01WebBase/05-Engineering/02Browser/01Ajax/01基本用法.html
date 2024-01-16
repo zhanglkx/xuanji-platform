@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const url = 'https://www.imooc.com/api/http/search/suggest?words=js';
+    //1】、创建对象
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = () => {
+        // readystatechange 事件监听 readyState 这个状态的变化
+        // 它的值从 0 ~ 4，一共 5 个状态
+        // 0：未初始化。尚未调用 open()
+        // 1：启动。已经调用 open()，但尚未调用 send()
+        // 2：发送。已经调用 send()，但尚未接收到响应
+        // 3：接收。已经接收到部分响应数据
+        // 4：完成。已经接收到全部响应数据，而且已经可以在浏览器中使用了
+        if (xhr.readyState !== 4) return
+        if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+            console.log('xhr.status >=200&xhr.status<=300');
+            console.log(xhr.responseText);
+            console.log(JSON.parse(xhr.responseText));
+        }
+    }
+    xhr.open('GET', url, true);
+    xhr.send(null);
+</script>
+</body>
+</html>

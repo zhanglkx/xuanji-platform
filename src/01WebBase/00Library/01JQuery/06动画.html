@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            display: none;
+            background-color: #2fff13;
+        }
+
+        .square{
+            width: 200px;
+            height: 200px;
+            background-color: #0a8ab6;
+        }
+
+    </style>
+
+    <script src="../../../node_modules/jquery/dist/jquery.js"></script>
+<script>
+    // $.ajax({
+    //     url:"yurl";
+    //
+    // })
+</script>
+    <script>
+        $(function () {
+            $('button:eq(0)').click(function () {
+                $('div').slideDown(200, function () {
+                    alert("dene");
+                });
+            });
+
+            $('button:eq(1)').click(function () {
+                $('div').slideUp(200, function () {
+                    alert("dene");
+                });
+            });
+
+            $('button:eq(2)').click(function () {
+                $('div').slideToggle(2000, function () {
+                    alert("dene");
+                });
+            });
+
+        });
+    </script>
+
+
+    <script>
+        /**这是typescript的写法，在JavaScript里面是错误的
+         *     function fun(a:string,b:string){
+         *         console.log(ad, addd);
+         *     };
+         *     fun(11, 'wds');
+         */
+
+        $(document).ready(function () {
+            $('#test-btn').click(function () {
+                $('#test').hide();
+                $('.tests').hide();
+                $('span').hide();
+                $(this).hide();//选取当前html元素，也就是按钮
+            });
+
+            $('#showBtn').click(function () {
+                $('#square').show(1000,'swing',function () {
+                    console.log('show完成')
+                });
+            });
+
+            $('#hideBtn').click(function () {
+                $('#square').hide(1000,"linear",function(){
+                    alert("Hide() 方法已完成!");
+                });
+            });
+
+            $('#toggleBtn').click(function () {
+                $('#square').toggle(1000,'linear',function () {
+                    alert("toggle() 方法已完成!");
+                });
+            });
+
+            $('#fadeToggleBtn').click(function () {
+                $('#square').fadeToggle(1000);
+            });
+
+
+
+
+        });
+    </script>
+
+</head>
+<body>
+<button>滑入</button>
+<button>滑出</button>
+<button>切换</button>
+<div></div>
+<br><br><br>
+<br><br><br>
+<h2>这是一个标题</h2>
+<p class="tests">这是一个段落</p>
+<p id="test">这是另外一个段落</p>
+<span id="test">这是另外一个span段落</span>
+<br><br><br>
+
+<button id="test-btn">点我</button>
+<br><br><br>
+<div class="square" id="square"></div>
+<br><br><br>
+
+<button id="showBtn">显示</button>
+<button id="hideBtn">隐藏</button>
+<button id="toggleBtn">toggleBtn</button>
+<button id="fadeToggleBtn">fadeToggle</button>
+</body>
+</html>

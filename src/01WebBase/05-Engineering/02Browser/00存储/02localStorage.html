@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form id="login" action="01cookie.html" method="post">
+    <input type="text" name="username"/>
+    <input type="password" name="password"/>
+    <input type="submit" id="btn" value="登录"/>
+</form>
+//
+<script>
+    //    localStorage.setItem('name','张理科');
+    //
+    //    localStorage.getItem('name');
+    //    console.log(localStorage.getItem('name'))
+    // localStorage.removeItem('name');
+    const loginForm = document.getElementById('login');
+    const btn = document.getElementById('btn');
+
+    const username = localStorage.getItem('username');
+
+    if (username) {
+        loginForm.username.value = username;
+    }
+
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+        localStorage.setItem('username', loginForm.username.value);
+        loginForm.submit();
+    }, false)
+
+</script>
+</body>
+</html>

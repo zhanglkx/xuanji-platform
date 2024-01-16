@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数去写链表</title>
+</head>
+<body>
+<script>
+    function ListNode(val, next) {
+        this.val = (val === undefined) ? 0 : val;
+        this.next = (next === undefined) ? null : next;
+    }
+
+    function linkList(arr) {
+        let head = new ListNode(-1);
+        let list = head;
+        for (let i = 0; i < arr.length; i++) {
+            list.next = new ListNode(arr[i]);
+            list = list.next;
+        }
+        return head.next;
+    }
+
+
+    function mergeTwoLists(l1, l2) {
+        if (!l1) {
+            console.log(l1);
+            console.log(l2);
+            return l2;
+        }
+        if (!l2) {
+            console.log(l2);
+            return l1;
+        }
+        if (l1.val < l2.val) {
+            l1.next = mergeTwoLists(l1.next, l2);
+            console.log('1' + typeof l1);
+            return l1;
+        } else {
+            l2.next = mergeTwoLists(l1, l2.next);
+            console.log('2' + l2);
+            return l2;
+        }
+    }
+
+    console.log('11111');
+    console.log(mergeTwoLists(linkList([1, 4, 5]), linkList([2, 3, 4, 6])));
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BFC的创建方式</title>
+
+</head>
+
+<body>
+<div class="wrapper">
+  <img src="" alt="666">
+  <div class="text">
+    <h2>BFC(Block Fromatting Context，
+      即块级格式上下文)</h2>
+    <p>BFC(Block Fromatting Context，
+      即块级格式上下文),简单的来说，就是形成一个独立的、不受外界影响的区域，我们都知道CSS的(大部分)属性是可以继承的，这就造成父元素对子元素的样式造成影响，而BFC就会隔绝父元素影响，起到一个隔绝保护的作用.</p>
+  </div>
+</div>
+</body>
+
+<style>
+    .wrapper {
+        background: url(../../../assets/image/img.png) no-repeat;
+        overflow: auto;
+    }
+
+    img {
+        width: 300px;
+        float: left;
+        margin: 2px;
+        padding: 3px;
+    }
+
+    .text {
+        width: 300px;
+        float: left;
+    }
+</style>
+
+</html>

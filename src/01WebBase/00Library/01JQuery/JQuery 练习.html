@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery 练习</title>
+    <script src="../../../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            // DOM 对象 转为 jQuery对象**：
+            let box = $('#box');
+            let box1 = $('.box');
+            let box2 = $('div');
+            console.log(box);
+            console.log(box1);
+            //jQuery对象 转为 DOM 对象
+            box2[1].style.backgroundColor = 'black';
+            box2[1].style.height = 200 + 'px';
+            box2[1].style.width = 200 + 'px';
+
+            let liElement = $('li');
+            for (let i = 0; i < liElement.length; i++) {
+                if (i % 2 == 0) {
+                    liElement[i].style.backgroundColor = 'red';
+                } else {
+                    liElement[i].style.backgroundColor = 'yellow';
+                }
+            }
+
+        //
+
+
+        });
+    </script>
+</head>
+<body>
+<div>
+
+    <ul>
+        <li>哈哈哈哈哈哈哈哈哈哈哈哈好</li>
+        <li>哈哈哈哈哈哈哈哈哈哈哈哈好</li>
+        <li>哈哈哈哈哈哈哈哈哈哈哈哈好</li>
+        <li>哈哈哈哈哈哈哈哈哈哈哈哈好</li>
+        <li>哈哈哈哈哈哈哈哈哈哈哈哈好</li>
+        <li>哈哈哈哈哈哈哈哈哈哈哈哈好</li>
+        <li>哈哈哈哈哈哈哈哈哈哈哈哈好</li>
+        <li>哈哈哈哈哈哈哈哈哈哈哈哈好</li>
+        <li>哈哈哈哈哈哈哈哈哈哈哈哈好</li>
+        <li>哈哈哈哈哈哈哈哈哈哈哈哈好</li>
+        <li>哈哈哈哈哈哈哈哈哈哈哈哈好</li>
+        <li>哈哈哈哈哈哈哈哈哈哈哈哈好</li>
+    </ul>
+    <div class="box"></div>
+    <div id="box"></div>
+    <div class="box"></div>
+
+</div>
+
+
+</body>
+</html>

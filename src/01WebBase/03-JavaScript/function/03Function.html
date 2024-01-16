@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+
+
+<script>
+    // fun(); //函数提升，先调用，再声明
+    // function fun() {
+    //     console.log('函数提升了');
+    // }
+
+    //    以下是错误的
+    // fun();
+    let fun = function fun() {
+        console.log('函数提升了');
+    };
+    // console.log(fun());
+    fun();
+    //    以上是错误的
+
+    //    题目
+    // fun();
+    // var fun = function () {
+    //     alert('A');
+    // }
+    //
+    // function fun() {
+    //     alert('B');
+    // }
+    //
+    // fun();
+
+    //    ===============递归==============/**/
+
+    function digui(n) {
+        if (n == 1) return 1;
+        return n * digui(n - 1);
+
+    }
+
+    console.log(digui(4));
+
+    //    斐波那契数列
+    function fib(n) {
+        if (n == 0 || n == 1) return 1;
+        return fib(n - 1) + fib(n - 2);
+    }
+
+    for (let i = 0; i < 15; i++) {
+        console.log(fib(i));
+    }
+
+    //    深克隆
+
+    let arr1 = [33, 44, 55, [88, 887, [1, 2, 3, 4]]];
+
+    function deppClone(arr) {
+        let result = [];
+        for (let i = 0; i, arr.length; i++) {
+            if (Array.isArray(arr[i])) {
+                result.push(deppClone(arr[i]));
+            } else {
+                result.push(i);
+            }
+        }
+        return result;
+    }
+
+    //    闭包
+    function block() {
+        let name = '慕课网';
+        return function () {
+            alert(name);
+        };
+    }
+
+    let inn = block()
+    inn();
+
+    function creatChectTem(standTem) {
+        function checkTem(n) {
+            if (n >= standTem) {
+                alert('体温高')
+            } else {
+                alert('正常');
+            }
+        }
+
+        return checkTem;
+    }
+
+    //这里向checkTem所处的环境传递了standTem
+    let chen_A = creatChectTem(99);
+    //这里向checkTem传递了 n，函数执行，与standTem比较，返回结果
+    chen_A(98);
+
+    //========闭包私有化变量
+    // function getMethod() {
+    //     let a = 0;
+    //     return function () {
+    //         alert(a);
+    //     };
+    // }
+    //
+    // let getA = getMethod();
+    // getA();
+    //========闭包获取对象
+    function getMethod() {
+        let a = 0;
+        return {
+            getA: function () {
+                return a;
+            },
+            add: function () {
+                a++;
+            }
+        }
+    }
+
+    let obj = getMethod();
+    console.log(obj.getA())
+
+</script>
+</body>
+</html>

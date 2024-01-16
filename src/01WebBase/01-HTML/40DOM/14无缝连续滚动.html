@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 1000px;
+            height: 130px;
+            border: 1px solid black;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+
+        .box ul {
+            list-style: none;
+            width: 5000px;
+            position: relative;
+        }
+
+        .box ul li {
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="box" class="box">
+    <ul id="list">
+        <li>
+            <img src="number/0.png" alt="">
+        </li>
+        <li>
+            <img src="number/1.png" alt="">
+        </li>
+        <li>
+            <img src="number/2.png" alt="">
+        </li>
+        <li>
+            <img src="number/3.png" alt="">
+        </li>
+        <li>
+            <img src="number/4.png" alt="">
+        </li>
+        <li>
+            <img src="number/5.png" alt="">
+        </li>
+    </ul>
+
+    <script>
+
+        let box = document.getElementById('box');
+        let list = document.getElementById('list');
+
+        //    多复制一边所有的 li
+        list.innerHTML += list.innerHTML;
+        let left = 0;
+
+        //    定时器
+        let timer;
+        move();
+
+        function move() {
+            clearInterval(timer)
+           timer = setInterval(function () {
+
+                left -= 8;
+                if (left <= -1260) {
+                    left = 0;
+                }
+                list.style.left = left + 'px';
+            }, 20);
+        }
+
+        box.onmouseenter = function () {
+            clearInterval(timer)
+        }
+        box.onmouseleave = function () {
+            move();
+        }
+
+    </script>
+
+</div>
+</body>
+</html>

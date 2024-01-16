@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box1">
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+</div>
+
+<div id="box2">
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+</div>
+
+
+<script>
+    <!--    先得到box1-->
+    let boxs = document.getElementById('box1');
+    //得到 box1中的标签数组
+    let ps_inbox1 =  boxs.getElementsByTagName('p');
+    console.log(ps_inbox1);
+</script>
+
+</body>
+</html>

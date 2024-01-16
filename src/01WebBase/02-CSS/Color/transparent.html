@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div class="colorMark"></div>
+<div class="case1"></div>
+<div class="case2"></div>
+<div class="case3">
+
+  <div class="pxDemo"></div>
+  父元素
+  <div class="case4">
+    currentColor 会取当前元素继承父级元素的文本颜色值或声明的文本颜色值，即 computed 后的 color 值。
+  </div>
+</div>
+
+
+</body>
+
+<style>
+    .colorMark {
+        border-top-color: #ffc107;
+        border-right-color: #00bcd4;
+        border-bottom-color: #e26b6b;
+        border-left-color: #cc7cda;
+        border-width: 50px;
+        border-style: solid;
+    }
+
+    .case1 {
+        border-left: 150px solid #cc7cda;
+        border-top: 30px solid transparent;
+        border-bottom: 50px solid transparent;
+    }
+
+    .case2 {
+        border-left: 150px solid #cc7cda;
+        border-bottom: 150px solid transparent;
+    }
+
+    .case3 {
+        color: #3dabff;
+    }
+
+    .case4 {
+        color: currentColor;
+    }
+
+    .pxDemo {
+        height: 20px;
+        width: 20px;
+        border: red solid 1px;
+    }
+
+</style>
+
+</html>

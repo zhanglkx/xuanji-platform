@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pseudo-classes</title>
+</head>
+<body>
+<h1>条件伪类</h1>
+<h2>:lang()伪类</h2>
+<p lang="en-US">
+  Music during road trips and long commutes aren’t a problem, but using headphones isn’t the best thing to do while
+  driving in your car.
+</p>
+
+<p lang="pl-PL">
+  Gdy widzimy znak z narysowaną czaszką i napisem <strong lang="en-US">DANGER</strong> to lepiej nie wchodzić do środka.
+</p>
+
+<hr>
+
+<h2>:dir() -- experiment</h2>
+<div dir="rtl">
+  <span>test1</span>
+  <div dir="ltr">
+    test2
+    <div dir="auto"> test3</div>
+  </div>
+</div>
+
+<hr>
+
+<h2>:has()</h2>
+
+<div class="has-pseudo">
+  <img class="img-class" src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" alt="">
+  <p>这是图片</p>
+</div>
+
+<!--前面的选择器表示没有包含 <h5> 元素的 <section> 元素有天蓝色边框，而后者表示包含不是 <h5> 元素的 <section> 元素颜色深天蓝色。-->
+<section class="has-section">
+  <p>只有p元素</p>
+</section>
+<section class="has-section">
+  <h5>不仅有h5元素</h5>
+  <p>还有p元素</p>
+</section>
+
+<hr>
+<h2>:is()</h2>
+<!--https://www.zhangxinxu.com/wordpress/2022/09/css-is-where-scoped-style/?shrink=1-->
+<div>简单来说，is伪类就是简化写法的作用，将其作用域当前选择器的指定后代，</div>
+<div>他还有一个功能是去除vue等第三方框架自动添加的，目的是创建CSS作用域的scope属性</div>
+
+<hr>
+<h2>:not()</h2>
+<div>用来匹配不符合一组选择器的元素；</div>
+
+<hr>
+<h1>行为伪类</h1>
+<div>:active：鼠标激活的元素；
+  :hover： 鼠标悬浮的元素；
+  ::selection：鼠标选中的元素；
+</div>
+<p><b><a href="/css/" target="_blank">这是一个链接</a></b></p>
+<p><b>注意：</b> a:hover 必须在 a:link 和 a:visited 之后，需要严格按顺序才能看到效果。</p>
+<p><b>注意：</b> a:active 必须在 a:hover 之后。</p>
+
+
+</body>
+<style>
+    *:lang(en-US) {
+        outline: 2px solid deeppink;
+    }
+
+    a:link {
+        color: #000000;
+    }
+
+    /* 未访问链接*/
+    a:visited {
+        color: #00FF00;
+    }
+
+    /* 已访问链接 */
+    a:hover {
+        color: #FF00FF;
+    }
+
+    /* 鼠标移动到链接上 */
+    a:active {
+        color: #0000FF;
+    }
+
+    /* 鼠标点击时 */
+
+    //更详细教程: https://www.zhangxinxu.com/wordpress/2022/08/css-has-pseudo-class/
+    p {
+    }
+
+    .has-pseudo:has(img) {
+        background: #2fff13;
+
+        .img-class {
+            width: 100px;
+            height: 100px;
+            border: solid 3px red;
+        }
+    }
+
+    .has-section:not(:has(h5)) {
+        border: #a912a6 solid;
+    }
+
+    .has-section:has(:not(h5)) {
+        color: deepskyblue;
+    }
+
+
+</style>
+
+
+</html>

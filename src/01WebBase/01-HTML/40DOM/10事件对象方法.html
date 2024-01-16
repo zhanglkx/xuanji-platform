@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    <input type="text" id="field">
+</p>
+
+<script>
+    let oField = document.getElementById('field');
+    oField.onkeypress = function (event) {
+        console.log(event.charCode);
+        if (!(event.charCode >= 48 && event.charCode <= 57 || event.charCode >= 97 && event.charCode <= 122)) {
+            event.preventDefault();
+        }
+    }
+
+</script>
+</body>
+</html>

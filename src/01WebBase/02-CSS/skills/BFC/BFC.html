@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BFC的行程</title>
+</head>
+<body>
+<div class="container">
+  <div class="inner"></div>
+</div>
+</body>
+
+<style>
+    .container {
+        border: 3px solid rgba(208, 109, 159, 0.77);
+        height: 200px;
+    }
+
+    .inner {
+        float: left;
+        background-color: cyan;
+        height: 100px;
+        width: 100px;
+    }
+</style>
+</html>
+

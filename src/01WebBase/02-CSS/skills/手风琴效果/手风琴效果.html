@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="dise">
+  <pic class="demo">
+    <ul class="main_promo clearfix" id="main_promo">
+      <li>
+        <input type="radio" name="radio-set" checked="checked" />
+        <div class="slide">
+          <a href="#"><p>手<br />风<br />琴<br />第<br />一</p></a>
+        </div>
+        <div class="slide_img" style="background-color:#990000"></div>
+      </li>
+      <li>
+        <input type="radio" name="radio-set" />
+        <div class="slide">
+          <a href="#slide_two"><p>手<br />风<br />琴<br />第<br />二</p></a>
+        </div>
+        <div class="slide_img" style="background-color:#99FF00"></div>
+      </li>
+      <li>
+        <input type="radio" name="radio-set" />
+        <div class="slide">
+          <a href="#slide_three"><p>手<br />风<br />琴<br />第<br />三</p></a>
+        </div>
+        <div class="slide_img" style="background-color:#33FFFF"></div>
+      </li>
+      <li>
+        <input type="radio" name="radio-set" />
+        <div class="slide">
+          <a href="#slide_four"><p>手<br />风<br />琴<br />第<br />四</p></a>
+        </div>
+        <div class="slide_img" style="background-color:#33FF00"></div>
+      </li>
+    </ul>
+  </pic>
+</div>
+
+
+</body>
+<style>
+    html {
+        background: -webkit-radial-gradient(center, ellipse, #232323 0%, #000 100%) /*#000*/;
+        height: 100%;
+    }
+
+    #dise {
+        width: 1010px;
+        height: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .demo {
+        position: absolute;
+        margin-top: 20px;
+        width: 1040px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .main_promo li {
+        position: relative;
+        float: left;
+        left: 0px;
+        top: 0px;
+        padding: 5px 0 5px 6px;
+        overflow: hidden;
+    }
+
+    .main_promo div {
+        float: left;
+    }
+
+    .slide a {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: 50px;
+        height: 300px;
+        border-radius: 0px;
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: all 1.3s;
+    }
+
+    .slide p { /*设置字体*/
+        position: absolute;
+        top: 30px;
+        left: 10px;
+        color: #A7170A;
+        height: 20px;
+        width: 100px;
+        font-family: 方正启体繁体;
+        font-size: 28px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, .8);
+        word-break: break-all;
+        /*-webkit-transform: rotate(-90deg);*/
+    }
+
+    .slide_img {
+        overflow: hidden;
+        width: 0;
+        height: 0; /*此处的长款设置不能省略，否则不能隐藏*/
+        transition: width 0.7s ease-in-out;
+    }
+
+    /*.slide_img img {此处的设置可省略
+      width:  692px;
+      height: 300px;
+    }*/
+    input[type="radio"] { /*radio和a重合，达到选择的效果*/
+        position: absolute;
+        left: 5px;
+        z-index: 99;
+        width: 50px;
+        height: 300px;
+        opacity: 0;
+    }
+
+    input:checked ~ .slide a {
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.1); /*按钮闪光效果*/
+    }
+
+    input:checked ~ .slide_img {
+        width: 692px;
+        height: 300px; /*此处的长宽必须设置，否则不显示*/
+        margin-left: 8px;
+    }
+</style>
+</html>

@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    /*flex-direction: row | row-reverse | column | column-reverse;*/
+    /*flex-direction: row;*/
+    /*方向*/
+    /*flex-wrap: nowrap | wrap | wrap-reverse;*/
+    /*flex-wrap: wrap;*/
+    /*换行*/
+    /*flex-direction:row-reverse;*/
+    /*justify-content:center;*/
+    /*align-content:flex-end;*/
+    flex-flow: column wrap;
+    /*justify-content 属性定义了项目在主轴上的对齐方式*/
+    /*justify-content: space-evenly;*/
+    /*flex-direction: column;;*/
+    /*flex-wrap: wrap;*/
+    /*flex-start：与交叉轴的起点对齐。
+flex-end：与交叉轴的终点对齐。
+center：与交叉轴的中点对齐。
+space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
+space-around：每根轴线两侧的间隔都相等。
+stretch（默认值）：轴线占满整个交叉轴。
+*/
+    /*align-content: flex-start;*/
+
+    width: 800px;
+    height: 300px;
+    border: solid 1px red;
+    background: skyblue;
+
+}
+
+.contain {
+    width: 50px;
+    height: 50px;
+    background: pink;
+    margin: 5px;
+    text-align: center;
+    top: 50%;
+    /*flex-grow: 1;*/
+}
+
+.order {
+    /*flex-grow: 1;*/
+    /*为0不收缩*/
+    /*flex-shrink: 0;*/
+    /*flex-basis 指定了子项在容器主轴方向上的初始大小，优先级高于自身的宽度width*/
+    flex-basis: 200px;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let obj = {
+        name: 'xiaol',
+        age: 12,
+        'book-name': 'avbbb',
+        sayHello: function () {
+            console.log(this.age);
+        }
+    }
+
+    obj.sayHello();
+
+    for (let K in obj) {
+        console.log('对象' + obj + "的属性" + K+"是"+obj[K]);
+    }
+
+</script>
+</body>
+</html>

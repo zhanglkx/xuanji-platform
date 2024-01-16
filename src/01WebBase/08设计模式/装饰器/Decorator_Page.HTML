@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>装饰器</title>
+</head>
+
+<body>
+    <button id="open">点击弹出模态框</button>
+    <button id="close"">点击关闭模态框</button>
+</body>
+
+<script>
+    /**
+     * 返回弹出模态框
+     */
+    const Modal = (function() {
+    	let modal = null
+    	return function() {
+            if(!modal) {
+            	modal = document.createElement('div')
+            	modal.innerHTML = '您还未登录哦~'
+            	modal.id = 'modal'
+            	modal.style.display = 'none'
+            	document.body.appendChild(modal)
+            }
+            return modal
+    	}
+    })()
+
+    /**
+     * 打开按钮 
+     */
+    class OpenButton {
+        /**
+         * 将modal显示
+         */
+        onclick() {
+            const modal = new Modal()
+            modal.style.display = 'block'
+            console.log(modal);
+        }
+    }
+
+    class Decorator {
+        constructor(OpenButton) {
+            this.OpenButton = OpenButton
+        }
+
+        onClick() {
+            this.OpenButton.onclick()
+            this.onChangeState()
+        }
+
+        onChangeState() {
+            this.disableButton()
+            this.changeButtonText()
+        }
+
+        disableButton() {
+            const btn = document.getElementById('open')
+            btn.setAttribute("disabled", true)
+        }
+
+        changeButtonText() {
+            const btn = document.getElementById('open')
+            btn.innerText = '快去登录'
+        }
+    }
+
+    
+    const openButton = new OpenButton()
+    const decorator = new Decorator(openButton)
+
+    document.getElementById('open').addEventListener('click', function() {
+    decorator.onClick()
+    })
+
+
+
+</script>
+
+</html>

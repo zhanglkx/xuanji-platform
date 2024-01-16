@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <p>我是段落</p>
+    <p id="para">我是段落</p>
+    <p>我是段落</p>
+</div>
+
+<script>
+    let box = document.getElementById('box');
+    let para = document.getElementById('para');
+    //所以子节点
+    console.log(box.childNodes);
+
+    //所有元素的子节点(IE9开始兼容)
+    console.log(box.children);
+    // console.log(box.children.para);
+
+    //第一个节点
+    console.log(box.firstChild);
+    console.log(box.firstChild.nodeType);
+    //第一个元素节点
+    console.log(box.firstElementChild);
+    console.log(box.firstElementChild.nodeType);
+
+    //父节点
+    console.log(para.parentNode);
+    //    前一个兄弟节点
+    console.log(para.previousSibling);
+    console.log(para.previousElementSibling);
+    //    后一个兄弟节点
+    console.log(para.nextSibling);
+    console.log(para.nextElementSibling);
+</script>
+
+</body>
+</html>

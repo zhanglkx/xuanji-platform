@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transition: all 0.5s;
+        }
+    </style>
+
+</head>
+<body>
+<div id="box"></div>
+<script>
+    let box1 = document.getElementById('box');
+
+    const move = (box, {x = 0, y = 0} = {}, end = () => {
+    }) => {
+        box.style.transform = `translate3d(${x}px,${y}px,0)`;
+        box.addEventListener('transitionend', () => {
+            end()
+        }, false);
+    };
+
+    const movePromise = (el, point) => {
+        return new Promise(resolve => {
+            move(el, point, () => {
+                resolve();
+            });
+        });
+    };
+
+    document.addEventListener('click', () => {
+        movePromise(box1, {x: 150})
+            .then(() => {
+                return movePromise(box1, {x: 0, y: 0});
+            })
+            .then(() => {
+                return movePromise(box1, {x: 0, y: 150});
+            })
+            .then(() => {
+                return movePromise(box1, {y: 150});
+            });
+    }, false)
+
+
+</script>
+</body>
+</html>

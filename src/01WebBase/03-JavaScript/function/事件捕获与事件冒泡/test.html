@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<style>
+    .wrap1 {
+        width: 300px;
+        height: 300px;
+        background-color: blue;
+    }
+
+    .wrap2 {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+
+    .wrap3 {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+    }
+
+    .wrap4 {
+        width: 50px;
+        height: 50px;
+        background-color: orange;
+    }
+</style>
+
+
+<div class="wrap1" style="margin-top: 50px">1
+    <div class="wrap2">2
+        <div class="wrap3">3
+            <div class="wrap4">4
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //js代码
+    var wrap1 = document.getElementsByClassName('wrap1')[0]
+    var wrap2 = document.getElementsByClassName('wrap2')[0]
+    var wrap3 = document.getElementsByClassName('wrap3')[0]
+    var wrap4 = document.getElementsByClassName('wrap4')[0]
+
+    // wrap1.addEventListener('click', function (e) {
+    //     console.log("1")
+    // })
+    // wrap2.addEventListener("click", function (e) {
+    //     console.log("2")
+    // })
+    // wrap3.addEventListener("click", function (e) {
+    //     console.log("3")
+    // })
+    // wrap4.addEventListener("click", function (e) {
+    //     console.log("4")
+    // })
+    wrap1.addEventListener('click', function (e) {
+        console.log("1")
+    })
+    wrap2.addEventListener("click", function (e) {
+        console.log("2捕获")
+    }, true)
+    wrap3.addEventListener("click", function (e) {
+        console.log("3")
+    })
+    wrap3.addEventListener("click", function (e) {
+        console.log("2捕获")
+    }, true)
+    wrap4.addEventListener("click", function (e) {
+        console.log("4")
+    })
+    wrap4.addEventListener("click", function (e) {
+        console.log("4捕获")
+    }, true)
+</script>
+
+
+</body>
+</html>

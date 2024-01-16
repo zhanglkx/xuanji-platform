@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<img src="" alt="" id="img">
+
+<script>
+
+    const onloadImg = url => {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+
+            //下面这句代码是相当于，把箭头函数赋值给img。onload这个，邓傲
+            img.onload = () => { //先执行img.src = url;在执行onload这句代码的时候，系统会自动的执行这句代码
+                resolve(img);
+                console.log('onload')
+            };
+            console.log(img.onload)
+            img.onerror = () => {
+                reject(new Error(`noe ${url}`));
+                console.log('onerror')
+            };
+
+            img.src = url;
+            console.log('======' + img.src)
+        });
+    }
+
+    const imgDom = document.getElementById('img');
+
+    onloadImg('https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF').then(img => {
+        // console.log(img.src);
+        setTimeout(() => {
+            imgDom.src = img.src;
+        }, 1000);
+    }).catch(err => {
+        console.log(err);
+    })
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div>
+    <div>
+        <div>111</div>
+    </div>
+</div>
+<script>
+    //...args的后面不能有其他的参数，否则会报错
+    const fn = (...args) => {
+        console.log(args[0]);
+        console.log(args[1]);
+        console.log(args[2]);
+        console.log(args[3]);
+        console.log(args[4]);
+        // console.log(args);
+        console.log('---------------------------');
+    }
+    fn(1, 2, 3);
+    fn(0, 1, 2, 3, 4, 5, 6);
+    console.log('fn========================');
+
+
+    function fn1(first, ...args) {
+        console.log(first); // 10
+        console.log(args); // 数组：[20, 30]
+    }
+
+    fn1(10, 20, 30);
+    console.log('fn1========================');
+
+
+    const sum = (...args) => {
+        let total = 0;
+        // item => total += item  是一个箭头函数
+        args.forEach(item => total += item);
+        return total;
+    }
+
+    console.log(sum(10, 20, 30));
+    console.log('sum========================');
+
+
+    //剩余参数和解构赋值配合使用
+    const students = ['张三', '李四', '王五'];
+    let [s1, ...s2] = students;
+
+    console.log(s1); // '张三'
+    console.log(s2); // ['李四', '王五']
+    console.log('剩余参数和解构赋值配合使用====================');
+
+
+    // 扩展运算符（展开语法）
+    const arrSym = [10, 20, 30];
+    console.log(...arrSym);
+    console.log(10, 20, 30);
+    // `arr`是一个数组，而`...arr`则表示`10, 20, 30`这样的序列。
+
+
+    //拓展运算符实现数组深复制
+    let arr1 = ['www', 'smyhvae', 'com'];
+    let arr2 = [...arr1]; //【重要代码】arr2 会重新开辟内存地址
+    console.log('arr1:' + arr1);
+    console.log('arr2:' + arr2);
+    console.log('---------------------');
+
+    arr2.push('你懂得'); //往arr2 里添加一部分内容
+    console.log('arr1:' + arr1);
+    console.log('arr2:' + arr2);
+
+    // 合并数组
+    let arr11 = ['王一', '王二', '王三'];
+    let arr22 = ['王四', '王五', '王六'];
+    // ...arr1  // '王一','王二','王三'
+    // ...arr2  // '王四','王五','王六'
+
+    // 方法1
+    let arr3 = [...arr11, ...arr22];
+    console.log(arr3); // ["王一", "王二", "王三", "王四", "王五", "王六"]
+
+    // 方法2
+    arr1.push(...arr22);
+    console.log(arr11); // ["王一", "王二", "王三", "王四", "王五", "王六"]
+
+    // 将伪数组或者可遍历对象转换为真正的数组
+    const myDivs = document.getElementsByClassName('div');
+    const divArr = [...myDivs]; // 利用扩展运算符，将伪数组转为真正的数组
+    console.log(divArr);
+    console.log('扩展运算符（展开语法========================');
+
+</script>
+</body>
+
+</html>

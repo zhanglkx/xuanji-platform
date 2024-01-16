@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>文本渐变</title>
+</head>
+<body>
+<div class="bruce flex-ct-x" data-title="使用linear-gradient控制渐变文本">
+  <h1 class="gradient-text">
+    hue-rotate是用来旋转色调的;通过linear-gradient设置背景渐变色，配合background-clip:text对背景进行文本裁剪</h1>
+</div>
+</body>
+
+<style>
+    .gradient-text {
+        background-image: linear-gradient(90deg, #f66, #f90);
+        background-clip: text;
+        line-height: 60px;
+        font-size: 60px;
+        color: transparent;
+        animation: hue 5s linear infinite;
+    }
+
+    @keyframes hue {
+        from {
+            filter: hue-rotate(0);
+        }
+        to {
+            filter: hue-rotate(-1turn);
+        }
+    }
+</style>
+
+</html>

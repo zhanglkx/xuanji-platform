@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name) {
+
+    }
+
+    Person.prototype.name = 'xianzao';
+    Person.prototype.getName = function () {
+        console.log(this.name);
+    };
+
+    var person1 = new Person();
+    console.log(person1.name);
+
+    var person2 = new Person();
+    person2.name = "对对对";
+    console.log(person2.name);
+
+    console.log(person1.name);
+
+    delete person2.name; //delete之后，person2.name自己的变量没了，就回去找上层，就会找到 Person.prototype.name = 'xianzao';
+
+    console.log(person2.name);
+
+
+</script>
+</body>
+</html>

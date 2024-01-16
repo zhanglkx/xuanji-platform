@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标悬停时变色</title>
+
+    <script src="../../../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            var oddLi = $('li:odd');
+            var evenLi = $('li:even');
+            oddLi.css('background', 'red');
+            evenLi.css('background', 'pink');
+
+            var color;
+            $('li').mouseenter(function () {
+                color = $(this).css('background');
+                $(this).css('background', 'green');
+            });
+
+            $('li').mouseleave(function () {
+                $(this).css('background', color);
+            });
+        });
+    </script>
+
+</head>
+<body>
+<ul>
+    <li>生命壹号，永不止步</li>
+    <li>生命壹号，永不止步</li>
+    <li>生命壹号，永不止步</li>
+    <li>生命壹号，永不止步</li>
+    <li>生命壹号，永不止步</li>
+    <li>生命壹号，永不止步</li>
+</ul>
+</body>
+</html>

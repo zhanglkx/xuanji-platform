@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>选择器</title>
+  <link rel="stylesheet" href="selector.css">
+</head>
+<body>
+
+<h2>相邻兄弟选择器</h2>
+<div>a + b 即 选择 紧跟在a后面的第一个b</div>
+<div class="abc1">前面的袁术</div>
+<div class="abc2">后面的袁术</div>
+<div class="abc2">后面的袁术</div>
+<div class="abc2">后面的袁术</div>
+
+<hr>
+
+<h2>通用兄弟选择器</h2>
+<p>通用兄弟选择器~波浪线 a~b选择a元素之后<b>所有</b>同层级b元素</p>
+
+<span class="general">我是一个span标签</span>
+<span class="general">我是一个span标签</span>
+<span class="GeneralSpan">我是一个span标签</span>
+<span class="GeneralSpan">我是一个span标签</span>
+<span class="GeneralSpan">我是一个span标签</span>
+<p>我是一个p标签</p>
+<span>我是一个span标签</span>
+<span>我是一个span标签</span>
+<div>
+  <span>我是一个span标签</span>
+  <span>我是一个span标签</span>
+</div>
+
+<hr>
+<h2>子代选择器</h2>
+
+<div class="child-selector">
+  <div>子代选择器 - 颜色青色</div>
+  <div>子代选择器 - 颜色青色</div>
+</div>
+<div>兄弟标签-不影响</div>
+
+<hr>
+
+</body>
+
+
+<style>
+    .child-selector {
+        background: red;
+    }
+
+    .child-selector > div {
+        background: #0a8ab6;
+    }
+</style>
+
+</html>

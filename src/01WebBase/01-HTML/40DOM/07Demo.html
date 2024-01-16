@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td {
+            width: 120px;
+            height: 30px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+<table id="myTable"></table>
+
+<script>
+
+    let table = document.getElementById('myTable');
+
+    for (let i = 1; i <= 9; i++) {
+        let tr = document.createElement("tr");
+        for (let j = 1; j <= i; j++) {
+            let td = document.createElement("td");
+
+            td.innerText = i + '乘' + j + '等于' + (i * j);
+
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    new Promise((resolve, reject) => {
+        reject('reason');
+    })
+        .then(null, data => { //如果没有null，这个方法不会执行,catch等于带null的then
+            console.log(data);
+        })
+        .catch(err => {
+            console.log(err);
+            // return undefined; 默认返回undefined
+            throw new Error('reason');
+        })
+        .then(data => { //这个方法不会执行
+            console.log(data + `${data}`);
+        })
+        .catch(err => {
+            console.log(err + `${err}`);
+        })
+
+    new Promise((resolve, reject) => {
+        reject('reason');
+    })
+
+        .then( //等同于finally
+            result => {
+                return result;
+            },
+            err => {
+                return new Promise((resolve, reject) => {
+                    reject(err);
+                });
+            })
+        .catch(err => {
+            console.log(err + `${err}`);
+        })
+        .finally(data => {
+            console.log(data);
+        })
+</script>
+</body>
+</html>

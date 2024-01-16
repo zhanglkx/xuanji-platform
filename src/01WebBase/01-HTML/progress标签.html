@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<progress value="250" max="1000">
+    <span>25</span>%
+</progress>
+<progress max="1000">
+    <span>25</span>%
+</progress>
+<button onClick="displayProgress()">Run Progress Bar</button>
+<progress id="downloadProgress" value="0" max="30">Hello</progress>
+<span id="message"></span>
+<script>
+    var milisec = 0
+    var max = 30
+
+    function displayProgress() {
+        // milisec=0;
+        if (milisec >= max) {
+            document.getElementById('message').innerHTML = "Done!";
+        }
+        milisec += 1;
+        document.getElementById('downloadProgress').value = milisec;
+        setTimeout("displayProgress()", max);
+    }
+</script>
+</body>
+</html>

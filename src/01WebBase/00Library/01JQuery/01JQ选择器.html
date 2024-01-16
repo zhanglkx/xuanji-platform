@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            var jqli = $('ul li');
+            jqli.css('margin', 5);
+            jqli.css("background", "pink");
+
+            var jqSonLi = $('ul>li');
+            jqSonLi.css("background", "red");
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <ol>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+    </ol>
+</ul>
+</body>
+</html>

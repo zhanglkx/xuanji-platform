@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框</title>
+
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            border: 3px solid red;
+            margin-top: 10px;
+            /*x偏移量 Y偏移量 模糊程度 阴影颜色 */
+            box-shadow: 10px 10px 20px green;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            border: 4px dotted red;
+            margin-top: 10px;
+            /*x偏移量 Y偏移量 模糊程度 阴影颜色 延展值 */
+            box-shadow: 10px 10px 20px 100px green;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            border: 4px dashed red;
+            margin-top: 10px;
+            border-bottom: #2fff13 solid 4px;
+            /* 内阴影  x偏移量 Y偏移量 模糊程度 阴影颜色 */
+            box-shadow: inset 10px 10px 20px  green;
+        }
+    </style>
+
+
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+</body>
+</html>

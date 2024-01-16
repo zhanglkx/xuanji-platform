@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bfc</title>
+    <style>
+        p {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            margin: 50px;
+        }
+        div{
+            /*如果不使用div包裹、不设置overflow: hidden;属性，会造成两个p标签之间只有50像素（由于设置50的margin，距离应该是100）*/
+            /*设置了overflow: hidden;属性后，距离100，解决塌陷问题*/
+            overflow: hidden;
+        }
+
+        /*s1 s2两个盒子，要浮动都浮懂，不能部分不浮动，不符合规范，使用 overflow: hidden;
+        形成bfc可以解决部分浮动的塌陷问题，但是不会这么用，不符合规范*/
+        .s1{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: #a6bba6;
+        }
+        .s2{
+            /*float: left;*/
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            background-color: #0e420e;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <p></p>
+</div>
+
+<div>
+    <p></p>
+</div>
+<section class="s1"></section>
+<section class="s2"></section>
+</body>
+</html>

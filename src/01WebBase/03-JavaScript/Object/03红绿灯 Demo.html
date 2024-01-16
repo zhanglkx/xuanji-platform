@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #menu-box img {
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+<div id="menu-box"></div>
+
+<script>
+    /**
+     * 构造函数，创建一副 img。可点击更改红绿灯颜色
+     * @constructor
+     */
+    function TrafficLight() {
+        this.color = 1;
+        this.init();
+        this.bandEvent();
+    }
+
+    TrafficLight.prototype.init = function () {
+        this.dom = document.createElement('img');
+        this.dom.src = 'images/' + this.color + '.jpg';
+        box.appendChild(this.dom);
+    }
+
+    TrafficLight.prototype.bandEvent = function () {
+        var self = this;
+        this.dom.onclick = function () {
+            self.changeColor();
+        }
+    }
+    TrafficLight.prototype.changeColor = function () {
+        this.color++;
+        if (this.color == 4) {
+            this.color = 1;
+        }
+        this.dom.src = 'images/' + this.color + '.jpg';
+    }
+    var box = document.getElementById('menu-box');
+
+    // 实例化100个
+    var count = 100
+
+    while (count--) {
+        new TrafficLight()
+    }
+
+</script>
+
+</body>
+</html>

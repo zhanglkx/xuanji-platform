@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过渡效果实战课03</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            /*border: 1px solid #000000;*/
+            margin: 40px auto;
+            /*perspective的意义在于设置远近点大小的比例，让它产生3D感，但是并不改变物体在transform-origin处的大小*/
+            /*这里的意思是两个重叠的元素在 Z 轴也就是垂直于屏幕方向相距300px*/
+            perspective: 600px;
+            position: relative;
+        }
+
+        .box img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
+        .box img.dog {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: 100% 50%;
+            transition: transform 1s ease 0s;
+        }
+
+        .box:hover img.dog {
+            transform: rotateY(-160deg);
+        }
+
+        .no2 img.dog {
+            transform-origin: 100% 100%;
+        }
+
+        .no2:hover img.dog {
+            transform: rotateY(180deg);
+        }
+
+        .no3 img.dog{
+            transform-origin: 0 100%;
+        }
+        .no3:hover img.dog{
+            transform:rotateX(180deg) ;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <img class="cat" src="../images/cat.jpg" alt="">
+    <img class="dog" src="../images/dog.jpg" alt="">
+</div>
+
+<div class="box no2">
+    <img class="cat" src="../images/cat.jpg" alt="">
+    <img class="dog" src="../images/dog.jpg" alt="">
+</div>
+<div class="box no3">
+    <img class="cat" src="../images/cat.jpg" alt="">
+    <img class="dog" src="../images/dog.jpg" alt="">
+</div>
+</body>
+</html>

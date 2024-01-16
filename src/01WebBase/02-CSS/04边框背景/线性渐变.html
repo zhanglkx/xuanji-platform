@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>线性渐变</title>
+  <style>
+    .box1{
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+      margin-bottom: 10px;
+      background-image: linear-gradient(to right, red ,blue);
+    /* 浏览器私有前缀 分别是 chrome Firefox edge、ie 欧鹏*/
+      background-image: -webkit-linear-gradient(to right, red ,blue);
+      background-image: -moz-linear-gradient(to right, red ,blue);
+      background-image: -ms-linear-gradient(to right, red ,blue);
+      background-image: -o-linear-gradient(to right, red ,blue);
+
+    }
+
+
+    .box2{
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+      margin-bottom: 10px;
+      background-image: linear-gradient(45deg, red ,blue);
+    }
+    .box3{
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+      margin-bottom: 10px;
+      background-image: linear-gradient(to right, red ,yellow,black,blue);
+    }
+    .box4{
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+      margin-bottom: 10px;
+      /*红色出现在20%的地方*/
+      background-image: linear-gradient(to right, red ,yellow 20%,blue);
+    }
+  </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+<div class="box5"></div>
+<div class="box6"></div>
+</body>
+</html>

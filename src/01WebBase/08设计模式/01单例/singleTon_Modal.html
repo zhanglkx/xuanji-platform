@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单例模式</title>
+</head>
+
+<body>
+    <button id="open">点击弹出模态框</button>
+    <button id="close" onclick="closeModal()">点击关闭模态框</button>
+</body>
+<style>
+    #modal {
+        height: 200px;
+        width: 200px;
+        line-height: 200px;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid black;
+        text-align: center;
+    }
+</style>
+<script>
+    let Modal = (function () {
+        let instance = null
+        return function () {
+            if (!instance) {
+                instance = document.createElement('div')
+                instance.innerHTML = '我是一个全局唯一的Modal'
+                instance.id = 'modal'
+                instance.style.display = 'none'
+                document.body.appendChild(instance)
+                console.log("重新创建了");
+            }
+            return instance
+        }
+    })()
+
+
+    // 点击打开按钮展示模态框
+    document.getElementById('open').addEventListener('click', function () {
+        // 未点击则不创建modal实例，避免不必要的内存占用;此处不用 new Modal 的形式调用也可以，和 Storage 同理
+        const modal = new Modal()
+        // console.log(modal);
+        modal.style.display = 'block'
+        console.log(modal);
+    })
+
+    const closeModal = () => {
+        const modal = new Modal()
+        modal.style.display = 'none'
+        // console.log(modal);
+    }
+</script>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <p>我是段落</p>
+    <p>我是段落</p>
+
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p id="para">我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+</div>
+
+<script>
+    let box = document.getElementById('box');
+    let para = document.getElementById('para');
+
+    //封装一个函数，返回元素所有子节点，兼容 IE6，类似 children(IE9)
+    /**
+     * 封装一个函数，返回元素所有子节点，兼容 IE6，类似 children(IE9)
+     * @param node 节点
+     * @returns {*[]} 返回元素所有子节点，
+     */
+    function getChildren(node) {
+        let children = [];
+        for (let i = 0; i < node.childNodes.length; i++) {
+            if (node.childNodes[i].nodeType == 1) {
+                children.push(node.childNodes[i]);
+            }
+        }
+        return children;
+    }
+
+    console.log(getChildren(box));
+
+    //    返回前一个兄弟节点兼容 ie6，
+    /**
+     *  返回前一个兄弟节点兼容 ie6，
+     * @param node 节点
+     * @returns {*}  兄弟节点
+     */
+    function getElementPrevSibling(node) {
+        //    while 语句
+        let o = node;
+        while (o.previousSibling != null) {
+            if (o.previousSibling.nodeType == 1) {
+                //找到了
+                return o.previousSibling;
+            }
+            //    r 让 o 成为他的前一个节点
+            o = o.previousSibling;
+        }
+    }
+
+    console.log(getElementPrevSibling(para));
+
+    function getAllElementSibling(node) {
+        //    前边的兄弟节点
+        let prev = [];
+        //    后边的兄弟节点
+        let nexts = [];
+
+        let o = node;
+        while (o.previousSibling != null) {
+            if (o.previousSibling.nodeType == 1) {
+                prev.unshift(o.previousSibling);
+            }
+            o = o.previousSibling;
+        }
+
+        o = node;
+
+        while (o.nextSibling != null) {
+            if (o.nextSibling.nodeType == 1) {
+                nexts.push(o.nextSibling);
+            }
+            o = o.nextSibling;
+        }
+        return prev.concat(nexts);
+    }
+
+    console.log("=============================");
+    console.log(getAllElementSibling(para));
+</script>
+
+</body>
+</html>

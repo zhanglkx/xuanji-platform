@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //定义类型
+    function Person(name, age) {
+        this.name = name
+        this.age = age
+        this.setName = function (name) {
+            this.name = name
+        }
+    }
+
+    var p1 = new Person('Tom', 12)
+    console.log(p1.name, p1.age)
+    p1.setName('Jack')
+    console.log(p1.name, p1.age)
+    console.log(p1 instanceof Person)
+
+    function Student(name, price) {
+        this.name = name
+        this.price = price
+    }
+
+    var s = new Student('Bob', 13000)
+    console.log(s instanceof Student)
+
+    var p2 = new Person('JACK', 23)
+    console.log(p1, p2)
+    console.log('=============-==-=-==');
+
+    //高阶函数举例1：把其他函数作为参数
+    function fn1(a, b, callback) {
+        console.log(a + b);
+        // 执行完上面的 console.log() 语句之后，再执行下面这个 callback 函数。也就是说，这个 callback 函数是最后执行的。
+        callback && callback();
+    }
+
+    fn1(10, 20, function () {
+        console.log('我是最后执行的函数');
+    });
+
+    console.log('=============-=-=-=-==');
+
+    function fn2() {
+        let a = 20;
+        return function () {
+            console.log(a);
+        };
+    }
+
+    const foo = fn2(); // 执行 fn1() 之后，会得到一个返回值。这个返回值是函数
+    foo();
+
+    let uniq = require('uniq');
+
+    let arr = [1, 1, 2, 2, 3, 5];
+    uniq(arr);
+    console.log(arr);  //输出结果：[ 1, 2, 3, 5 ]
+
+</script>
+</body>
+</html>

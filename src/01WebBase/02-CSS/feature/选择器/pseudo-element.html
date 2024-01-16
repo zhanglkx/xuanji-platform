@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>pseudo-element</title>
+</head>
+<body>
+<h3>::first-line</h3>
+<p><strong style="background: red"> ::first-line->每一个 p 元素的第一行。</strong>一个选择器中只能使用一个伪元素。伪元素必须紧跟在语句中的简单选择器/基础选择器之后=====在Vue或React等前端框架中，其组件模块为了保证昙花一现支持过的属性中，其组件模块为了保证样式的唯一性，也就是拥有自己独立的CSS作用域，会使用
+  这个语法，scoped属性是Chrome浏览器曾经昙花一现支持过的属性览器曾经昙花一现支持过的属性，可以实现CSS作用域效果，后来废弃了。
+</p>
+<p>伪元素</p>
+<p>伪元素</p>
+<p>伪元素</p>
+
+<h3>::after</h3>
+<p>
+  The sailfish is named for its sail-like dorsal fin and is widely considered the fastest fish in the ocean.
+  <a href="https://en.wikipedia.org/wiki/Sailfish">You can read more about it here</a>.
+</p>
+
+<p>
+  The red lionfish is a predatory scorpionfish that lives on coral reefs of the Indo-Pacific Ocean and more recently in
+  the western Atlantic. <a href="" class="dead-link">You can read more about it here</a>.
+</p>
+
+
+</body>
+
+
+<style>
+    /* 每一个 <p> 元素的第一行。 */
+    p::first-line {
+        color: blue;
+        text-transform: uppercase;
+    }
+
+    p::first-letter {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: brown;
+    }
+
+    a::after {
+        content: ' (' attr(href) ')';
+        background: red;
+    }
+
+    .dead-link {
+        text-decoration: line-through;
+    }
+
+    .dead-link::after {
+        content: url('https://interactive-examples.mdn.mozilla.net/media/warning.svg');
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        color: red;
+        font-size: 9px;
+        background: red;
+    }
+
+    a::before {
+        content: "♥";
+        color: lightpink;
+    }
+
+</style>
+</html>

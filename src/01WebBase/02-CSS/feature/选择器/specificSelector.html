@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>特定后代选择器</title>
+</head>
+<body>
+<div class="bruce flex-ct-x" data-title="使用:nth-child()选择指定元素">
+  <ul class="specified-scope">
+    <li>10001</li>
+    <li>10002</li>
+    <li>10003</li>
+    <li>10004</li>
+    <li>10005</li>
+    <li>10006</li>
+    <li>10007</li>
+    <li>10008</li>
+    <li>10009</li>
+    <li>10010</li>
+  </ul>
+</div>
+</body>
+
+<style>
+    li {
+        &:nth-child(odd) {
+            background-color: #999999;
+            color: red;
+        }
+
+        &:nth-child(even){
+            background-color: #666999;
+            color: yellow;
+        }
+    }
+
+
+</style>
+
+</html>

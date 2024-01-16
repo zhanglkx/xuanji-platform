@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    document.cookie = 'name1=zs';
+    document.cookie = 'name=zs2';
+    //    包含中文
+    document.cookie = `userName=${encodeURIComponent('张三')}`;
+    document.cookie = `${encodeURIComponent('用户名')}=${encodeURIComponent('张三')}`;
+    //    过期时间
+    document.cookie = `nam23e=z44s2; expires=${new Date('2100-1-01 00:00:00')}`;
+    document.cookie = 'maxAge=maxAge; max-age=10';
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn"> 添加列表项</button>
+
+<ul id="lest">
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+</ul>
+
+<script>
+    <!--    给每个li 都添加点击事件，但是小消耗内存-->
+    /**
+     *     let Obtn = document.getElementById('btn');
+     *     let oList = document.getElementById('lest');
+     *     Obtn.onclick = function () {
+     *         let oli = document.createElement('li');
+     *         oli.innerHTML = '列表项';
+     *         oList.appendChild(oli);
+     *         oli.onclick = function () {
+     *             this.style.color = 'red';
+     *         }
+     *     }
+     * @type {HTMLElement}
+     */
+
+//    事件委托方法，减少内存消耗
+    let oList = document.getElementById('lest');
+    oList.onclick = function (event) {
+        event.target.style.color = 'red';
+    }
+
+</script>
+</body>
+</html>

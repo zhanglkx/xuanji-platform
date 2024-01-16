@@ -1,0 +1,56 @@
+Index: src/App.vue
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><template>\n  <div>\n    <RouterViews/>\n  </div>\n</template>\n\n<script setup lang=\"ts\">\n// import { reqLogin } from './api/user'\n// import {onMounted} from 'vue'\n\n// onMounted(() => {\n//   reqLogin({ username: 'admin', password: '111111' })\n// })\nimport RouterViews from \"@/layout/RouterViews.vue\";\n</script>\n\n<style scoped lang=\"scss\">\ndiv {\n  h1 {\n    color: $color;\n  }\n}\n\n.logo {\n  height: 6em;\n  padding: 1.5em;\n  will-change: filter;\n  transition: filter 300ms;\n}\n\n.logo:hover {\n  filter: drop-shadow(0 0 2em #646cffaa);\n}\n\n.logo.vue:hover {\n  filter: drop-shadow(0 0 2em #42b883aa);\n}\n</style>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/App.vue b/src/App.vue
+--- a/src/App.vue	(revision afb43b4748ebca8ac045b5985ae41a2aedc704e8)
++++ b/src/App.vue	(date 1704691930977)
+@@ -1,7 +1,5 @@
+ <template>
+-  <div>
+-    <RouterViews/>
+-  </div>
++  <RouterViews />
+ </template>
+ 
+ <script setup lang="ts">
+Index: src/views/home/index.vue
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><template>\n  <div>一级路由home</div>\n</template>\n\n<script setup lang=\"ts\">\nimport { onMounted } from 'vue'\nimport useUserStore from '@/store/modules/user.ts'\n\nlet UserStore = useUserStore()\nonMounted(() => {\n  UserStore.userInfo()\n})\n</script>\n<style lang=\"scss\" scoped></style>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/views/home/index.vue b/src/views/home/index.vue
+--- a/src/views/home/index.vue	(revision afb43b4748ebca8ac045b5985ae41a2aedc704e8)
++++ b/src/views/home/index.vue	(date 1704691930977)
+@@ -1,14 +1,23 @@
+ <template>
+-  <div>一级路由home</div>
++  <div class="home" >一级路由home</div>
+ </template>
+ 
+ <script setup lang="ts">
+-import { onMounted } from 'vue'
++import { onMounted, ref } from 'vue'
+ import useUserStore from '@/store/modules/user.ts'
+ 
+ let UserStore = useUserStore()
+ onMounted(() => {
+   UserStore.userInfo()
+ })
++
++// let bg = ref('')
++
+ </script>
+-<style lang="scss" scoped></style>
++<style lang="scss" scoped>
++.home{
++  background:  linear-gradient(180deg, #26b8da 0%, #26b8da 78.7%, rgba(38, 184, 218, 0.6) 88.2%, rgba(255, 255, 255, 0.3) 100%);
++  min-height: 40vh;
++}
++
++</style>

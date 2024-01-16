@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<header> 头部</header>
+
+<nav>导航栏</nav>
+
+<section>区块（有语义化的div）</section>
+
+<main>主要区域</main>
+
+<article>主要内容</article>
+
+<aside>侧边栏</aside>
+
+<footer> 底部</footer>
+<hr>
+<!--音视频标签-->
+<!--<video src='https://aux-saas.oss-cn-hangzhou.aliyuncs.com/adwelcome/%E5%A5%A5%E5%85%8B%E6%96%AF%E6%8B%86%E8%A7%A3%E8%A7%86%E9%A2%91.mp4'-->
+<!--       style="width: 300px;height: 150px;" controls autoplay loop='false' poster="../../assets/logo.png"></video>-->
+
+<!--<video>-->
+<!--    <source src='./../../assets/video/奥克斯拆解视频.mp4' type='video/flv'></source>-->
+<!--&lt;!&ndash;    <source src='aa.mp4' type='video/mp4'></source>&ndash;&gt;-->
+<!--</video>-->
+
+<!--<audio src="https://dict.youdao.com/dictvoice?audio=poster: The specified video is not fully downloaded, or the user has not clicked on the cover that is displayed before playing. By default, the first shot of the current video file is displayed. You c&le=en-->
+<!--" controls autoplay loop='true'></audio>-->
+<br>
+<hr>
+<div>
+    用户名<input type="text" name="user" placeholder="途虎" value="1" size="100" maxlength="9"
+                 style="width: 150px;height: 25px; font-size: 10px">
+</div>
+<div>
+    密码<input type="password" name="password" size="100" maxlength="100">
+</div>
+
+<div>性别：<input type="radio" name="sex" value="nan"> 男
+
+    <input type="radio" name="sex" value="woman" checked> 女
+</div>
+
+<div>爱好：
+
+    <input type="checkbox" name="interest" value="web"> 学习前端知识
+
+    <input type="checkbox" name="interest" value="hz" checked> 学习化妆知识
+
+    <input type="checkbox" name="interest" value="sports"> 学习运动知识
+</div>
+
+<div><input type="submit" value="提交"></div>
+<div><input type="button" value="普通按钮" name="btn"></div>
+<div><input type="reset" name="reset" value="重置按钮"></div>
+
+<div><input type="image" src="../../assets/image/img.png" name="imgName"></div>
+
+<select name="car" size="1">
+
+    <option value="bmw">宝马</option>
+
+    <option value="benc">奔驰</option>
+
+    <option value="audi" selected>奥迪</option>
+
+</select>
+
+<div>
+    <textarea name="areaName" cols="5" rows="5"></textarea>
+
+    <input type="submit" value="提交">
+</div>
+
+<div>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="fileName">
+    </form>
+</div>
+email ：能够验证当前输入的邮箱地址是否合法
+url ： 验证URL
+number ： 只能输入数字，其他输入不了，而且自带上下增大减小箭头，max属性可以设置为最大值，min可以设置为最小值，value为默认值。
+search ： 输入框后面会给提供一个小叉，可以删除输入的内容，更加人性化。
+range ： 可以提供给一个范围，其中可以设置max和min以及value，其中value属性可以设置为默认值
+color ： 提供了一个颜色拾取器
+time ： 时分秒
+data ： 日期选择年月日
+datatime ： 时间和日期(目前只有Safari支持)
+datatime-local ：日期时间控件
+week ：周控件
+month：月控件
+
+<div>email<input type="email"></div>
+<div>url<input type="url"></div>
+<div>number<input type="number"></div>
+<div>search<input type="search"></div>
+<div>range<input type="range"></div>
+<div>color<input type="color"></div>
+<div>time<input type="time"></div>
+<div>
+    data<input type="data">
+</div>
+<div>datatime<input type="datatime"></div>
+<div>datatime-local<input type="datatime-local"></div>
+<div>month<input type="month"></div>
+
+<hr>
+
+
+<div>下载进度：
+    <progress max="1000">
+        <span>25</span>%
+    </progress>
+</div>
+
+
+<div>
+    <progress value="250" max="1000">
+        <span>25</span>%
+    </progress>
+</div>
+
+
+<div>
+    <meter value="2" min="0" max="10">2 out of 10</meter>
+    <br>
+    <meter value="0.6">60%</meter>
+</div>
+
+<hr>
+<div id="a1">11</div>
+<div id="a2">22</div>
+<div id="a3">33</div>
+<div id="a4">44</div>
+
+<hr>
+<img src="../../assets/image/img.png" draggable="true"/>
+
+<img src="../../assets/image/index.png"
+     srcset="../../assets/image/index.png 128w, ../../assets/image/index2x.png 256w, ../../assets/image/index3x.png 512w"
+     sizes="(max-width: 360px) 340px, 128px"/>
+<hr>
+<canvas id="myCanvas" width="200" height="100"></canvas>
+<canvas id="myCanvas">your browser does not support the canvas tag</canvas>
+<hr>
+<label for="mobile">Number:</label>
+<input type="text" id="mobile"/>
+<hr>
+
+<b>abc</b>
+<br>
+<strong>abc</strong>
+<!--不起作用，尽在头部<head>起作用-->
+<title>abc</title>
+<h1>abc</h1>
+
+<div style="height: 100000px"></div>
+<script>
+    console.log(document.querySelector('#a1'));
+    // document.querySelector用于获取单个元素，当页面中出现多个相同class标签(或者多个相同标签(比如多个div))时，只匹配第一个元素
+    console.log(document.querySelector('div'))
+    console.log(document.querySelectorAll('div'))
+
+
+    // 增加了一个 localStorage ‘myCat’ 数据项
+    localStorage.setItem('myCat', 'Tom');
+
+    // 读取 localStorage ‘myCat’ 数据项
+    let cat = localStorage.getItem('myCat');
+
+    // 移除 localStorage ‘myCat’ 数据项
+    // localStorage.removeItem('myCat');
+    //
+    // // 移除所有的 localStorage 数据项
+    // localStorage.clear();
+
+
+    sessionStorage.setItem("key", "value");
+    var value = sessionStorage.getItem("key");
+    // sessionStorage.removeItem("key");
+    // sessionStorage.clear();
+
+    var storage = window.localStorage;
+    storage.key1 = "hello";
+    storage["key2"] = "world";
+    console.log(storage.key1);
+    console.log(storage["key2"]);
+
+    var storage = window.localStorage;
+    for (var i = 0, len = storage.length; i < len; i++) {
+        var key = storage.key(i);
+        var value = storage.getItem(key);
+        console.log(key + "=" + value);
+    }
+    console.log('================================');
+    if (window.addEventListener) {
+        window.addEventListener("storage", handle_storage, false);
+    } else if (window.attachEvent) {
+        window.attachEvent("onstorage", handle_storage);
+    }
+
+    function handle_storage(e) {
+        if (!e) {
+            e = window.event;
+        }
+    }
+
+    //canvas
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#FF0000';
+    ctx.fillRect(0, 0, 80, 100);
+
+</script>
+<style>
+    div {
+        margin-top: 20px;;
+    }
+</style>
+</body>
+</html>

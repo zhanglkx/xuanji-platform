@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    Promise.resolve成功状态简写
+    // new Promise(resolve => resolve('foo'));
+    // let abc = Object.prototype.toString.call('dddd',112);
+    // console.log(abc)
+
+
+    //参数是Promise对象的
+    // const p1 = new Promise(resolve => {
+    //     setTimeout(resolve, 1000, '我执行了');
+    //     console.log('data');
+    // });
+    //
+    // //Promise.resolve(p1) 就等于p1  then就归于p1管了
+    // Promise.resolve(p1).then(data => {
+    //     console.log(data);
+    // });
+    // console.log(Promise.resolve(p1) === p1);
+
+    //    具有then方法的对象
+    const thenAble = {
+        then(resolve, reject) {
+            console.log('then');
+            resolve('data');
+            // reject('data');
+        }
+    };
+
+    Promise.resolve(thenAble).then(
+        data => console.log(data),
+        err => console.log(err)
+    )
+    console.log(Promise.resolve(thenAble));
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02过渡的缓动效果</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*宽度过渡*/
+        .box1 {
+            border: 1px solid red;
+        }
+
+        .box1 p {
+            width: 60px;
+            height: 60px;
+            background-color: #2fff13;
+            margin-top: 10px;
+            position: relative;
+            left: 0;
+            transition: left 2s linear 0s;
+        }
+
+        .box1 p:nth-child(2) {
+            transition-timing-function: ease;
+        }
+
+        .box1 p:nth-child(3) {
+            transition-timing-function: ease-in;
+        }
+
+        .box1 p:nth-child(4) {
+            transition-timing-function: ease-out;
+        }
+
+        .box1 p:nth-child(5) {
+            transition-timing-function: ease-in-out;
+        }
+
+        /*贝塞尔曲线*/
+        .box1 p:nth-child(6) {
+            transition-timing-function: cubic-bezier(1,-0.06,.79,.06);
+        }
+
+        .box1:hover p {
+            left: 1000px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="box1">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p>111</p>
+</div>
+
+</body>
+</html>

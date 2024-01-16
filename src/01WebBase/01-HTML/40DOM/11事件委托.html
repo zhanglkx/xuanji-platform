@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>批量事件监听</title>
+</head>
+<body>
+<ul id="list">
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+    <li>列表项</li>
+</ul>
+
+<script>
+    let oList = document.getElementById('list');
+    let lidArr = oList.getElementsByTagName('li');
+
+    for (let i = 0; i < lidArr.length; i++) {
+        lidArr[i].onclick = function () {
+            this.style.color = 'red';
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

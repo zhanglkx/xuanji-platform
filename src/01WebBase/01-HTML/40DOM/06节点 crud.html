@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <p>我是段落1</p>
+    <p>我是段落2</p>
+    <p>我是段落3</p>
+    <p>我是段落4</p>
+
+    <script>
+        let oBox = document.getElementById('box');
+        //得到所有 p 节点
+        let oPs = oBox.getElementsByTagName("p");
+
+        //    创建孤儿节点
+        let oP = document.createElement('p');
+        //    设置内部文字
+        oP.innerText = '我是新来的';
+        //    上树
+        // box.append(oP);
+
+
+        box.insertBefore(oP, oPs[0]);
+
+
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 200px;
+            left: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box"></div>
+
+<script>
+
+    let oBox = document.getElementById('box');
+    let t = 200;
+    let l = 200;
+
+    document.onkeydown = function (e) {
+
+        /**
+         * document.onkeydown=function(event){
+         *     if(event.key=='ArrowLeft'){
+         *         console.log('向左');
+         *     }
+         * }x
+         */
+        switch (e.keyCode) { //shit
+            case 37:
+                l -= 3;
+                break;
+            case 38:
+                t -= 3;
+                break;
+            case 39:
+                l += 3;
+                break;
+            case 40:
+                t += 3;
+                break;
+        }
+        oBox.style.left = l + 'px';
+        oBox.style.top = t + 'px';
+    }
+
+</script>
+
+</body>
+</html>

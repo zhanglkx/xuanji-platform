@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+
+<style>
+    #box {
+        width: 300px;
+        height: 300px;
+        border: 1px solid #2fff13;
+    }
+</style>
+<script>
+    // let box = document.getElementById('box');
+    // box.innerHTML = '你比 i 加加加';
+    // box.innerHTML = '你<ul><li>niub</li><li>扭扭捏捏呢</li </ul>';
+
+    // box.innerText = '你<ul><li>niub</li><li>扭扭捏捏呢</li </ul>';
+
+    // box.style.backgroundColor = 'red';
+    // box.style.backgroundImage = 'url(../Demos/00小慕医生/images/banner.png)';
+
+    //    获取不是 w3c 标准属性
+    let box = document.getElementById('box');
+    box.setAttribute('data-n', 10);
+    let n = box.getAttribute('data-n');
+    alert(n)
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            animation: logo 1s linear 0s infinite alternate;
+        }
+
+        @keyframes logo {
+            from {
+                transform: rotate(0);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            animation: move 10s linear 0s infinite alternate;
+        }
+
+        @keyframes move {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(1000px);
+            }
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            animation: changeBg 2s linear 0s  forwards;
+        }
+
+        @keyframes changeBg {
+            from {
+                border-radius: 0;
+            }
+            to {
+                border-radius: 50%;
+            }
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            animation: changeColor 2s linear 0s  infinite;
+        }
+
+        @keyframes changeColor {
+            0%{
+                background-color: red;
+            }
+            20%{
+                background-color: black;
+            }
+            40%{
+                background-color: orange;
+            }
+            80%{
+                background-color: green;
+            }
+            100%{
+                background-color: yellow;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+</body>
+</html>

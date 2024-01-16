@@ -1,0 +1,9 @@
+/* 通用兄弟选择器：a~b选择a元素之后所有同层级b元素 */
+.general ~ span {
+    color: aqua;
+    display: block;
+}
+
+.abc1 + .abc2 {
+    color: red;
+}

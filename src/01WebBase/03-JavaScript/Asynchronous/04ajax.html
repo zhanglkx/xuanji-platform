@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../../00Library/jquery-3.6.0.min.js"></script>
+<script>
+    $.ajax({
+        url: 'https://t7.baidu.com/it/u=1819248061,230866778&fm=193&f=GIF',
+        type: 'GET',
+        success: function (argument) {
+            console.log(argument + '调用成功');
+        },
+        beforeSend: function (argument) {
+            // console.log(argument + '调用');
+        },
+        error: function (argument) {
+            console.log(argument + '调用失败');
+        },
+    });
+</script>
+</body>
+</html>

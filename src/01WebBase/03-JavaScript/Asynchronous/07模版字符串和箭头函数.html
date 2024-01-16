@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+</head>
+<body>
+
+</body>
+
+<button id="btn">开始</button>
+<span id="result">0</span>
+
+<script>
+    const person = {
+        name: 'aaaa',
+        age: 12,
+        sex: 'male',
+    }
+    const
+        info = `我的mingz是：${person.name},性别：${person.sex},今年${person.age}`;
+    console.log(info);
+
+    // 1.输出多行字符串 所有空格换行缩进都会原样输出
+    const huanhang1 = `速度舍不得\n福能东方家`;
+    const huanhang2 = `速度舍不得
+福能东方家`;
+
+    // 2.输出` \
+
+    const huanhang3 = `\` \\`;
+    console.log(huanhang3);
+
+
+    //    3.注入
+    const uername = 'alex';
+    const person1 = {age: 18, sec: 'male'};
+    const getSex = function (sex) {
+        return sex === 'male' ? '男' : '女';
+    }
+    console.log('===========');
+    const zhuru = `${uername},${person.age + 2},${getSex(person1.sec)}`;
+    console.log(zhuru);
+
+    console.log('======剪头函数=====');
+    const btn = document.getElementById('btn');
+    const result = document.getElementById('result');
+    const timer = {
+        time: 0,
+        start: function () {
+            let self = this;
+            btn.addEventListener("click", function () {
+                setInterval(function () {
+                    console.log(this);
+                    console.log(self);
+                    self.time++;
+                    result.innerHTML = self.time;
+                }, 1000);
+            }, false)
+        },
+    }
+
+    timer.start();
+</script>
+</html>

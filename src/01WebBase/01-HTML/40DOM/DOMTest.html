@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom</title>
+    <script>
+        <!-- 给 Window 对象添加 onload 监听事件，onload 表示页面都加载完毕了-->
+        //这样写就回执行这段 js 代码
+        window.onload = function () {
+            let box1 = document.getElementById('box1');
+            let box2 = document.getElementById('box2');
+
+            console.log(box1);
+            console.log(box2);
+        }
+    </script>
+
+</head>
+<body>
+<div id="box1">我是盒子1</div>
+<div id="box2">我是盒子2</div>
+
+</body>
+</html>

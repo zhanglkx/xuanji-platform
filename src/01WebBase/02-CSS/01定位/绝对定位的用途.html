@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位用途</title>
+    <style>
+        .carousel {
+            width: 650px;
+            height: 360px;
+            border: 1px solid blue;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .carousel .btn {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            background-color: rgba(255, 255, 255, .5);
+            /*    鼠标为小手*/
+            cursor: pointer;
+            font-family: consolas;
+            font-size: 26px;
+        }
+
+        .carousel .btn:hover {
+            background-color: gold;
+            color: white;
+        }
+
+        .carousel .left {
+            left: 10px;
+            top: 50%;
+            margin-top: -20px;
+        }
+
+        .carousel .right {
+            right: 10px;
+            top: 50%;
+            margin-top: -20px;
+        }
+
+        .carousel ol{
+            position: absolute;
+            width: 120px;
+            height: 20px;
+            right: 20px;
+            bottom: 20px;
+            navbutton_background_color: #051e05;
+        }
+
+        .carousel ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background-color: gold;
+            border-radius: 50%;
+            margin-right: 10px;
+            list-style: none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="carousel">
+    <img src="../images/0.jpg" alt="">
+    <a class="right btn">&lt;</a>
+    <a class="left btn">&gt;</a>
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</div>
+</body>
+</html>

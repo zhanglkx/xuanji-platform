@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本过滤选择器</title>
+    <script src="../../../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            //  odd奇数
+            $('li:odd').css('background', 'red');
+
+            //    even 偶数
+            $('li:even').css('background', 'yellow');
+
+            // :eq(index)
+            $('li:eq(4)').css('font-size', '40px');
+
+        //    lt 小于
+            $('li:lt(3)').css('font-size','30px')
+
+        //    gt 大与
+            $('li:gt(5)').css('font-size','30px')
+
+            // :first
+            $("li:first").css("font-size", "40px");
+
+            // :last
+            $("li:last").css("font-size", "40px");
+
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <ol>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+    </ol>
+</ul>
+</body>
+</html>
